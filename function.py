@@ -58,7 +58,11 @@ def fibonacci():
         return fibonacci()
 
 def intersect(list1,list2):
-    return [i for i in list1 if i in list2]
+    if isinstance(list1,list) and isinstance(list2,list):
+        return [i for i in list1 if i in list2]
+    else:
+        print(f'{list1} et {list2} doivent être des listes')
+        return
 
 def palyndrom(str):
     invert = "".join([*str][::-1])
